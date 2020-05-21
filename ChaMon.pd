@@ -1,7 +1,7 @@
-#N canvas 208 124 619 566 10;
-#N canvas 293 81 921 686 chaosmonster1 1;
+#N canvas 153 134 921 585 10;
+#N canvas 1 81 921 686 chaosmonster1 0;
 #X obj 166 48 catch~ \$0mmmodmix;
-#N canvas 0 0 619 500 limit 0;
+#N canvas 1 81 619 500 limit 0;
 #X obj 88 47 inlet~;
 #X obj 89 374 outlet~;
 #X obj 94 332 hip~ 20;
@@ -1257,13 +1257,13 @@
 #X coords 0 -1 1 1 170 110 1 100 100;
 #X restore 466 236 pd fm_rm_ffm_osc6;
 #X obj 533 57 table \$0cm1ram 128;
-#X obj 611 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+#X obj 611 365 bng 15 250 50 0 empty PresWrite empty 17 7 0 10 -258113
 -1 -1;
-#X obj 545 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
--1;
+#X obj 545 365 bng 15 250 50 0 empty PresRead empty 17 7 0 10 -4034
+-1 -1;
 #X obj 403 31 t b b;
 #X obj 200 -5 t b b;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 1 81 450 300 (subpatch) 0;
 #X array \$0cm1flash 8192 float 1;
 #A 0 1 -95.748 6.35698 56.4409 0.0133655 0.01 0.811024 4.34213 0.636364
 0.353535 1000 -37.2913 0.0443511 21.1654 0.0708588 0.264965 0.724409
@@ -1826,7 +1826,7 @@
 #X obj 297 564 tabread \$0cm1flash;
 #X obj 303 531 +;
 #X obj 297 593 tabwrite \$0cm1ram;
-#X obj 577 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 577 382 bng 15 250 50 0 empty PresDown empty 17 7 0 10 -262144
 -1 -1;
 #X obj 628 394 int;
 #X obj 635 419 + 1;
@@ -1836,10 +1836,15 @@
 #X obj 558 432 - 1;
 #X obj 625 465 clip 0 63;
 #X msg 468 406 set \$1;
-#X msg 478 434 63;
+#X msg 478 434 61;
 #X obj 399 409 loadbang;
 #X text 480 364 presets;
-#N canvas 1 81 597 599 lp-hp_level 1;
+#X text 424 -56 generates noise- and 'chaos'-sounds with six oscillators
+with mutual frequency \, filter and ringmodulation. some similarities
+to the famous 'heishere' reaktor ensemble by lazyfish. without any
+fx and more tweakable though.;
+#X text 425 2 9/2009 martin brinkmann;
+#N canvas 1 81 597 599 lp-hp_le 0;
 #X obj -28 72 inlet~;
 #X obj 28 425 outlet~;
 #X obj 33 192 lop~;
@@ -1920,12 +1925,9 @@
 #X connect 30 2 8 0;
 #X connect 31 0 1 0;
 #X coords 0 -1 1 1 280 40 1 100 100;
-#X restore 105 355 pd lp-hp_level;
-#X text 424 -56 generates noise- and 'chaos'-sounds with six oscillators
-with mutual frequency \, filter and ringmodulation. some similarities
-to the famous 'heishere' reaktor ensemble by lazyfish. without any
-fx and more tweakable though.;
-#X text 425 2 9/2009 martin brinkmann;
+#X restore 105 355 pd lp-hp_le;
+#X obj 731 468 s Preset;
+#X obj 707 149 r PresUp;
 #X connect 0 0 4 2;
 #X connect 0 0 2 2;
 #X connect 0 0 6 2;
@@ -1933,12 +1935,12 @@ fx and more tweakable though.;
 #X connect 0 0 5 2;
 #X connect 0 0 8 2;
 #X connect 1 0 7 0;
-#X connect 2 0 46 1;
-#X connect 3 0 46 1;
-#X connect 4 0 46 1;
-#X connect 5 0 46 1;
-#X connect 6 0 46 1;
-#X connect 8 0 46 1;
+#X connect 2 0 48 1;
+#X connect 3 0 48 1;
+#X connect 4 0 48 1;
+#X connect 5 0 48 1;
+#X connect 6 0 48 1;
+#X connect 8 0 48 1;
 #X connect 10 0 12 0;
 #X connect 11 0 13 0;
 #X connect 12 0 15 0;
@@ -1948,14 +1950,14 @@ fx and more tweakable though.;
 #X connect 12 1 3 1;
 #X connect 12 1 5 1;
 #X connect 12 1 8 1;
-#X connect 12 1 46 2;
+#X connect 12 1 48 2;
 #X connect 13 0 4 0;
 #X connect 13 0 2 0;
 #X connect 13 0 6 0;
 #X connect 13 0 3 0;
 #X connect 13 0 5 0;
 #X connect 13 0 8 0;
-#X connect 13 0 46 0;
+#X connect 13 0 48 0;
 #X connect 13 1 26 0;
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
@@ -1965,9 +1967,10 @@ fx and more tweakable though.;
 #X connect 19 0 18 0;
 #X connect 19 0 22 0;
 #X connect 20 0 25 0;
-#X connect 20 0 36 1;
 #X connect 20 0 39 1;
+#X connect 20 0 36 1;
 #X connect 20 0 42 0;
+#X connect 20 0 49 0;
 #X connect 21 0 23 0;
 #X connect 22 0 21 0;
 #X connect 22 1 24 0;
@@ -1995,20 +1998,60 @@ fx and more tweakable though.;
 #X connect 42 0 43 0;
 #X connect 43 0 20 0;
 #X connect 44 0 43 0;
-#X connect 46 0 1 0;
+#X connect 48 0 1 0;
+#X connect 50 0 36 0;
 #X coords 0 -1 1 1 540 300 1 100 100;
 #X restore 19 -23 pd chaosmonster1;
 #X obj 11 361 dac~;
 #X obj 167 364 receive fromGUI;
 #X obj 167 389 list trim;
-#X obj 168 408 route /MainLOP /MainHIP /MainRES;
-#X obj 168 472 s MainLOP;
-#X obj 231 442 s MainHIP;
-#X obj 305 463 s MainRES;
+#X obj 168 522 s MainLOP;
+#X obj 231 492 s MainHIP;
+#X obj 294 463 s MainRES;
+#X obj 588 312 send toGUI;
+#X obj 588 164 loadbang;
+#X msg 588 212 list /MainLOP 107 \, list /MainHIP 74 \, list /MainRES
+0.58047;
+#X obj 682 244 r Preset;
+#X msg 687 285 list /Preset \$1;
+#X obj 169 408 route /MainLOP /MainHIP /MainRES /PresUp /PresDown /PresRead
+/PresWrite;
+#X obj 388 564 s PresUp;
+#X obj 494 560 s PresDown;
+#X obj 557 531 s PresRead;
+#X obj 653 536 s PresWrite;
+#X obj 387 504 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 387 524 sel 1;
+#X obj 489 508 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 489 528 sel 1;
+#X obj 541 482 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 541 502 sel 1;
+#X obj 613 476 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 613 496 sel 1;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 4 1 6 0;
-#X connect 4 2 7 0;
+#X connect 3 0 12 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 4 0;
+#X connect 12 1 5 0;
+#X connect 12 2 6 0;
+#X connect 12 3 17 0;
+#X connect 12 4 19 0;
+#X connect 12 5 21 0;
+#X connect 12 6 23 0;
+#X connect 17 0 18 0;
+#X connect 18 0 13 0;
+#X connect 19 0 20 0;
+#X connect 20 0 14 0;
+#X connect 21 0 22 0;
+#X connect 22 0 15 0;
+#X connect 23 0 24 0;
+#X connect 24 0 16 0;

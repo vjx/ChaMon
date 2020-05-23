@@ -1,5 +1,5 @@
-#N canvas 378 149 921 585 10;
-#N canvas 1 81 921 686 chaosmonster1 1;
+#N canvas 57 149 1241 575 10;
+#N canvas 1 81 921 686 chaosmonster1 0;
 #X obj 166 48 catch~ \$0mmmodmix;
 #N canvas 1 81 619 500 limit 0;
 #X obj 88 47 inlet~;
@@ -23,7 +23,7 @@
 #X connect 8 0 5 0;
 #X connect 9 0 6 0;
 #X restore 103 445 pd limit;
-#N canvas 38 47 1061 870 fm_rm_ffm_osc2 0;
+#N canvas 38 81 1061 686 fm_rm_ffm_osc2 0;
 #X obj -2 669 outlet~;
 #N canvas 58 213 718 607 fmrm_osc 0;
 #X obj 199 229 osc~;
@@ -73,23 +73,23 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X restore 177 564 pd softclip;
-#X obj 110 183 hsl 128 8 0 1 0 1 empty empty empty -2 -8 0 10 -204800
--1 -1 8900 1;
+#X obj 110 183 hsl 128 8 0 1 0 1 OSC2-Volm-S OSC2-Volm empty -2 -8
+0 10 -204800 -1 -1 8900 1;
 #X obj 275 267 inlet~;
 #X obj 440 707 throw~ \$0mmmodmix;
-#X obj 110 126 hsl 128 8 -128 128 0 1 empty empty empty -2 -8 0 10
--4034 -1 -1 9144 1;
-#X obj 110 195 hsl 128 8 1 999 1 1 empty empty empty -2 -8 0 10 -262130
--1 -1 1246 1;
+#X obj 110 126 hsl 128 8 -128 128 0 1 OSC2-Note-S OSC2-Note empty -2
+-8 0 10 -4034 -1 -1 9144 1;
+#X obj 110 195 hsl 128 8 1 999 1 1 OSC2-Del-S OSC2-Del empty -2 -8
+0 10 -262130 -1 -1 1246 1;
 #X obj 441 670 *~;
 #X obj 172 381 *~;
-#X obj 110 137 hsl 128 8 0.01 3000 1 1 empty empty empty -2 -8 0 10
--204786 -1 -1 10000 1;
+#X obj 110 137 hsl 128 8 0.01 3000 1 1 OSC2-NotOf-S OSC2-NotOf empty
+-2 -8 0 10 -204786 -1 -1 10000 1;
 #X obj -1 637 *~;
-#X obj 255 105 vsl 8 100 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 3200 1;
-#X obj 244 105 vsl 8 100 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 3600 1;
+#X obj 255 105 vsl 8 100 0 1 0 1 OSC2-Main-S OSC2-Main empty 0 -9 0
+10 -262144 -1 -1 3200 1;
+#X obj 244 105 vsl 8 100 0 1 0 1 OSC2-DelM-S OSC2-DelM empty 0 -9 0
+10 -260097 -1 -1 3600 1;
 #X obj -2 572 t f f;
 #X obj 3 599 *;
 #X obj 503 431 t f f;
@@ -106,17 +106,17 @@
 #X connect 2 0 5 0;
 #X connect 5 0 1 0;
 #X restore 334 636 pd delayline;
-#X obj 110 114 hsl 128 8 1 1000 0 1 empty empty empty -2 -8 0 10 -232576
--1 -1 0 1;
-#X obj 110 149 hsl 128 8 0 128 0 1 empty empty empty -2 -8 0 10 -162280
--1 -1 0 1;
-#X obj 110 171 hsl 128 8 0.01 3000 1 1 empty empty empty -2 -8 0 10
--228856 -1 -1 0 1;
+#X obj 110 114 hsl 128 8 1 1000 0 1 OSC2-Vol-S OSC2-Vol empty -2 -8
+0 10 -232576 -1 -1 0 1;
+#X obj 110 149 hsl 128 8 0 128 0 1 OSC2-FFreq-S OSC2-FFreq empty -2
+-8 0 10 -162280 -1 -1 0 1;
+#X obj 110 171 hsl 128 8 0.01 3000 1 1 OSC2-FReM-S OSC2-FReM empty
+-2 -8 0 10 -228856 -1 -1 0 1;
 #X obj 258 482 *~;
 #X obj 280 370 mtof;
 #X obj 213 506 +~;
-#X obj 110 160 hsl 128 8 0.01 1 1 1 empty empty empty -2 -8 0 10 -191407
--1 -1 0 1;
+#X obj 110 160 hsl 128 8 0.01 1 1 1 OSC2-FRes-S OSC2-FRes empty -2
+-8 0 10 -191407 -1 -1 0 1;
 #X obj 175 536 vcf~;
 #X obj -36 12 tabread \$0cm1ram;
 #X obj 418 51 tabwrite \$0cm1ram;
@@ -2032,111 +2032,13 @@ fx and more tweakable though.;
 #X obj 588 312 send toGUI;
 #X obj 169 408 route /MainLOP /MainHIP /MainRES /PresUp /PresDown /PresRead
 /PresWrite /OSC1-Vol /OSC1-Note /OSC1-NotOf /OSC1-FFreq /OSC1-FRes
-/OSC1-FReM /OSC1-Volm /OSC1-Del /OSC1-DelM /OSC1-Main;
-#N canvas 1 81 1167 677 OSC1 0;
-#X obj 35 54 inlet;
-#X obj 89 55 inlet;
-#X obj 143 54 inlet;
-#X obj 197 55 inlet;
-#X obj 252 53 inlet;
-#X obj 306 54 inlet;
-#X obj 360 53 inlet;
-#X obj 414 54 inlet;
-#X obj 474 50 inlet;
-#X obj 528 51 inlet;
-#X obj 96 754 s OSC1-Vol;
-#X obj 292 737 s OSC1-Note;
-#X obj 291 708 - 128;
-#X obj 302 657 s OSC1-NotOf;
-#X obj 294 560 * 3;
-#X obj 355 585 s OSC1-FFreq;
-#X obj 379 531 s OSC1-FRes;
-#X obj 438 492 s OSC1-FReM;
-#X obj 413 285 s OSC1-Volm;
-#X obj 479 255 s OSC1-Del;
-#X obj 479 229 min 999;
-#X obj 502 176 s OSC1-DelM;
-#X obj 546 129 s OSC1-Main;
-#X obj 300 627 min 3000;
-#X obj 379 499 min 1;
-#X obj 427 397 * 3;
-#X obj 379 476 max 0.01;
-#X obj 428 428 max 0.01;
-#X obj 295 591 max 0.01;
-#X obj 96 673 max 1;
-#X obj 479 206 max 1;
-#X connect 0 0 29 0;
-#X connect 1 0 12 0;
-#X connect 2 0 14 0;
-#X connect 3 0 15 0;
-#X connect 4 0 26 0;
-#X connect 5 0 25 0;
-#X connect 6 0 18 0;
-#X connect 7 0 30 0;
-#X connect 8 0 21 0;
-#X connect 9 0 22 0;
-#X connect 12 0 11 0;
-#X connect 14 0 28 0;
-#X connect 20 0 19 0;
-#X connect 23 0 13 0;
-#X connect 24 0 16 0;
-#X connect 25 0 27 0;
-#X connect 26 0 24 0;
-#X connect 27 0 17 0;
-#X connect 28 0 23 0;
-#X connect 29 0 10 0;
-#X connect 30 0 20 0;
-#X restore 289 683 pd OSC1 Reveive;
-#X f 44;
-#N canvas 1 81 857 627 OSC1 0;
-#X obj 419 90 r OSC1-Note-S;
-#X msg 419 171 list /OSC1-Note \$1;
-#X obj 419 143 + 128;
-#X obj 557 147 / 3;
-#X obj 561 117 r OSC1-NotOf-S;
-#X msg 554 177 list /OSC1-NotOf \$1;
-#X obj 137 111 r OSC1-FFreq-S;
-#X msg 137 165 list /OSC1-FFreq \$1;
-#X obj 275 116 r OSC1-FRes-S;
-#X msg 275 165 list /OSC1-FRes \$1;
-#X obj 212 334 / 3;
-#X obj 212 295 r OSC1-FReM-S;
-#X msg 209 360 list /OSC1-FReM \$1;
-#X obj 0 105 r OSC1-Vol-S;
-#X msg 0 159 list /OSC1-Vol \$1;
-#X msg 17 362 list /OSC1-Volm \$1;
-#X obj 18 331 r OSC1-Volm-S;
-#X obj 329 321 r OSC1-Del-S;
-#X obj 467 326 r OSC1-DelM-S;
-#X obj 604 311 r OSC1-Main-S;
-#X msg 329 352 list /OSC1-Del \$1;
-#X msg 467 357 list /OSC1-DelM \$1;
-#X msg 604 342 list /OSC1-Main \$1;
-#X obj 297 518 send toGUI;
-#X connect 0 0 2 0;
-#X connect 1 0 23 0;
-#X connect 2 0 1 0;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 5 0 23 0;
-#X connect 6 0 7 0;
-#X connect 7 0 23 0;
-#X connect 8 0 9 0;
-#X connect 9 0 23 0;
-#X connect 10 0 12 0;
-#X connect 11 0 10 0;
-#X connect 12 0 23 0;
-#X connect 13 0 14 0;
-#X connect 14 0 23 0;
-#X connect 15 0 23 0;
-#X connect 16 0 15 0;
-#X connect 17 0 20 0;
-#X connect 18 0 21 0;
-#X connect 19 0 22 0;
-#X connect 20 0 23 0;
-#X connect 21 0 23 0;
-#X connect 22 0 23 0;
-#X restore 690 330 pd OSC1 Send;
+/OSC1-FReM /OSC1-Volm /OSC1-Del /OSC1-DelM /OSC1-Main /OSC2-Vol /OSC2-Note
+/OSC2-NotOf /OSC2-FFreq /OSC2-FRes /OSC2-FReM /OSC2-Volm /OSC2-Del
+/OSC2-DelM /OSC2-Main;
+#X obj 258 684 osc-receive 1, f 44;
+#X obj 553 717 osc-receive 2, f 44;
+#X obj 748 265 osc-send 1;
+#X obj 825 265 osc-send 2;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 2 0 3 0;
@@ -2170,3 +2072,13 @@ fx and more tweakable though.;
 #X connect 24 14 25 7;
 #X connect 24 15 25 8;
 #X connect 24 16 25 9;
+#X connect 24 17 26 0;
+#X connect 24 18 26 1;
+#X connect 24 19 26 2;
+#X connect 24 20 26 3;
+#X connect 24 21 26 4;
+#X connect 24 22 26 5;
+#X connect 24 23 26 6;
+#X connect 24 24 26 7;
+#X connect 24 25 26 8;
+#X connect 24 26 26 9;

@@ -229,7 +229,7 @@
 #X connect 49 0 28 0;
 #X coords 0 -1 1 1 170 110 1 100 100;
 #X restore 285 116 pd fm_rm_ffm_osc2;
-#N canvas 38 47 1061 870 fm_rm_ffm_osc4 0;
+#N canvas 38 81 1061 686 fm_rm_ffm_osc4 0;
 #X obj -2 669 outlet~;
 #N canvas 58 213 718 607 fmrm_osc 0;
 #X obj 199 229 osc~;
@@ -279,23 +279,23 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X restore 177 564 pd softclip;
-#X obj 110 183 hsl 128 8 0 1 0 1 empty empty empty -2 -8 0 10 -204800
--1 -1 9100 1;
+#X obj 110 183 hsl 128 8 0 1 0 1 OSC4-Volm-S OSC4-Volm empty -2 -8
+0 10 -204800 -1 -1 9100 1;
 #X obj 275 267 inlet~;
 #X obj 440 707 throw~ \$0mmmodmix;
-#X obj 110 126 hsl 128 8 -128 128 0 1 empty empty empty -2 -8 0 10
--4034 -1 -1 5150 1;
-#X obj 110 195 hsl 128 8 1 999 1 1 empty empty empty -2 -8 0 10 -262130
--1 -1 2800 1;
+#X obj 110 126 hsl 128 8 -128 128 0 1 OSC4-Note-S OSC4-Note empty -2
+-8 0 10 -4034 -1 -1 5150 1;
+#X obj 110 195 hsl 128 8 1 999 1 1 OSC4-Del-S OSC4-Del empty -2 -8
+0 10 -262130 -1 -1 2800 1;
 #X obj 441 670 *~;
 #X obj 172 381 *~;
-#X obj 110 137 hsl 128 8 0.01 3000 1 1 empty empty empty -2 -8 0 10
--204786 -1 -1 0 1;
+#X obj 110 137 hsl 128 8 0.01 3000 1 1 OSC4-NotOf-S OSC4-NotOf empty
+-2 -8 0 10 -204786 -1 -1 0 1;
 #X obj -1 637 *~;
-#X obj 255 105 vsl 8 100 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 3300 1;
-#X obj 244 105 vsl 8 100 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 5000 1;
+#X obj 255 105 vsl 8 100 0 1 0 1 OSC4-Main-S OSC4-Main empty 0 -9 0
+10 -262144 -1 -1 3300 1;
+#X obj 244 105 vsl 8 100 0 1 0 1 OSC4-DelM-S OSC4-DelM empty 0 -9 0
+10 -260097 -1 -1 5000 1;
 #X obj -2 572 t f f;
 #X obj 3 599 *;
 #X obj 503 431 t f f;
@@ -312,17 +312,17 @@
 #X connect 2 0 5 0;
 #X connect 5 0 1 0;
 #X restore 334 636 pd delayline;
-#X obj 110 114 hsl 128 8 1 1000 0 1 empty empty empty -2 -8 0 10 -232576
--1 -1 12700 1;
-#X obj 110 149 hsl 128 8 0 128 0 1 empty empty empty -2 -8 0 10 -162280
--1 -1 3800 1;
-#X obj 110 171 hsl 128 8 0.01 3000 1 1 empty empty empty -2 -8 0 10
--228856 -1 -1 0 1;
+#X obj 110 114 hsl 128 8 1 1000 0 1 OSC4-Vol-S OSC4-Vol empty -2 -8
+0 10 -232576 -1 -1 12700 1;
+#X obj 110 149 hsl 128 8 0 128 0 1 OSC4-FFreq-S OSC4-FFreq empty -2
+-8 0 10 -162280 -1 -1 3800 1;
+#X obj 110 171 hsl 128 8 0.01 3000 1 1 OSC4-FReM-S OSC4-FReM empty
+-2 -8 0 10 -228856 -1 -1 0 1;
 #X obj 258 482 *~;
 #X obj 280 370 mtof;
 #X obj 213 506 +~;
-#X obj 110 160 hsl 128 8 0.01 1 1 1 empty empty empty -2 -8 0 10 -191407
--1 -1 2100 1;
+#X obj 110 160 hsl 128 8 0.01 1 1 1 OSC4-FRes-S OSC4-FRes empty -2
+-8 0 10 -191407 -1 -1 2100 1;
 #X obj 175 536 vcf~;
 #X obj -36 12 tabread \$0cm1ram;
 #X obj 418 51 tabwrite \$0cm1ram;
@@ -843,7 +843,7 @@
 #X connect 49 0 28 0;
 #X coords 0 -1 1 1 170 110 1 100 100;
 #X restore 285 236 pd fm_rm_ffm_osc5;
-#N canvas 38 47 1061 870 fm_rm_ffm_osc3 0;
+#N canvas 121 181 1061 686 fm_rm_ffm_osc3 0;
 #X obj -2 669 outlet~;
 #N canvas 58 213 718 607 fmrm_osc 0;
 #X obj 199 229 osc~;
@@ -881,7 +881,7 @@
 #X connect 15 0 1 0;
 #X connect 16 0 14 1;
 #X restore 143 433 pd fmrm_osc;
-#N canvas 0 0 450 300 softclip 0;
+#N canvas 1 81 450 300 softclip 0;
 #X obj 134 48 inlet~;
 #X obj 135 200 outlet~;
 #X obj 136 164 /~;
@@ -893,23 +893,23 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X restore 177 564 pd softclip;
-#X obj 110 183 hsl 128 8 0 1 0 1 empty empty empty -2 -8 0 10 -204800
--1 -1 6500 1;
+#X obj 110 183 hsl 128 8 0 1 0 1 OSC3-Volm-S OSC3-Volm empty -2 -8
+0 10 -204800 -1 -1 6500 1;
 #X obj 275 267 inlet~;
 #X obj 440 707 throw~ \$0mmmodmix;
-#X obj 110 126 hsl 128 8 -128 128 0 1 empty empty empty -2 -8 0 10
--4034 -1 -1 4750 1;
-#X obj 110 195 hsl 128 8 1 999 1 1 empty empty empty -2 -8 0 10 -262130
--1 -1 3800 1;
+#X obj 110 126 hsl 128 8 -128 128 0 1 OSC3-Note-S OSC3-Note empty -2
+-8 0 10 -4034 -1 -1 4750 1;
+#X obj 110 195 hsl 128 8 1 999 1 1 OSC3-Del-S OSC3-Del empty -2 -8
+0 10 -262130 -1 -1 3800 1;
 #X obj 441 670 *~;
 #X obj 172 381 *~;
-#X obj 110 137 hsl 128 8 0.01 3000 1 1 empty empty empty -2 -8 0 10
--204786 -1 -1 0 1;
+#X obj 110 137 hsl 128 8 0.01 3000 1 1 OSC3-NotOf-S OSC3-NotOf empty
+-2 -8 0 10 -204786 -1 -1 0 1;
 #X obj -1 637 *~;
-#X obj 255 105 vsl 8 100 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 2600 1;
-#X obj 244 105 vsl 8 100 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 3100 1;
+#X obj 255 105 vsl 8 100 0 1 0 1 OSC3-Main-S OSC3-Main empty 0 -9 0
+10 -262144 -1 -1 2600 1;
+#X obj 244 105 vsl 8 100 0 1 0 1 OSC3-DelM-S OSC3-DelM empty 0 -9 0
+10 -260097 -1 -1 3100 1;
 #X obj -2 572 t f f;
 #X obj 3 599 *;
 #X obj 503 431 t f f;
@@ -926,17 +926,17 @@
 #X connect 2 0 5 0;
 #X connect 5 0 1 0;
 #X restore 334 636 pd delayline;
-#X obj 110 114 hsl 128 8 1 1000 0 1 empty empty empty -2 -8 0 10 -232576
--1 -1 9700 1;
-#X obj 110 149 hsl 128 8 0 128 0 1 empty empty empty -2 -8 0 10 -162280
--1 -1 2500 1;
-#X obj 110 171 hsl 128 8 0.01 3000 1 1 empty empty empty -2 -8 0 10
--228856 -1 -1 0 1;
+#X obj 110 114 hsl 128 8 1 1000 0 1 OSC3-Vol-S OSC3-Vol empty -2 -8
+0 10 -232576 -1 -1 9700 1;
+#X obj 110 149 hsl 128 8 0 128 0 1 OSC3-FFreq-S OSC3-FFreq empty -2
+-8 0 10 -162280 -1 -1 2500 1;
+#X obj 110 171 hsl 128 8 0.01 3000 1 1 OSC3-FReM-S OSC3-FReM empty
+-2 -8 0 10 -228856 -1 -1 0 1;
 #X obj 258 482 *~;
 #X obj 280 370 mtof;
 #X obj 213 506 +~;
-#X obj 110 160 hsl 128 8 0.01 1 1 1 empty empty empty -2 -8 0 10 -191407
--1 -1 5100 1;
+#X obj 110 160 hsl 128 8 0.01 1 1 1 OSC3-FRes-S OSC3-FRes empty -2
+-8 0 10 -191407 -1 -1 5100 1;
 #X obj 175 536 vcf~;
 #X obj -36 12 tabread \$0cm1ram;
 #X obj 418 51 tabwrite \$0cm1ram;
@@ -2003,13 +2003,13 @@ fx and more tweakable though.;
 #X coords 0 -1 1 1 540 300 1 100 100;
 #X restore 19 -23 pd chaosmonster1;
 #X obj 11 361 dac~;
-#X obj 167 364 receive fromGUI;
-#X obj 167 389 list trim;
+#X obj 169 362 receive fromGUI;
+#X obj 169 387 list trim;
 #X obj -140 700 s MainLOP;
 #X obj -77 670 s MainHIP;
 #X obj -14 641 s MainRES;
-#X obj 578 140 loadbang;
-#X msg 578 188 list /MainLOP 107 \, list /MainHIP 74 \, list /MainRES
+#X obj 588 140 loadbang;
+#X msg 588 188 list /MainLOP 107 \, list /MainHIP 74 \, list /MainRES
 0.58047;
 #X obj 612 231 r Preset;
 #X msg 612 260 list /Preset \$1;
@@ -2030,19 +2030,26 @@ fx and more tweakable though.;
 1;
 #X obj 208 677 sel 1;
 #X obj 588 312 send toGUI;
+#X obj 270 717 osc-receive 1, f 44;
+#X obj 553 717 osc-receive 2, f 44;
+#X obj 748 265 osc-send 1;
+#X obj 825 265 osc-send 2;
+#X obj 839 714 osc-receive 3, f 44;
+#X obj 896 265 osc-send 3;
 #X obj 169 408 route /MainLOP /MainHIP /MainRES /PresUp /PresDown /PresRead
 /PresWrite /OSC1-Vol /OSC1-Note /OSC1-NotOf /OSC1-FFreq /OSC1-FRes
 /OSC1-FReM /OSC1-Volm /OSC1-Del /OSC1-DelM /OSC1-Main /OSC2-Vol /OSC2-Note
 /OSC2-NotOf /OSC2-FFreq /OSC2-FRes /OSC2-FReM /OSC2-Volm /OSC2-Del
-/OSC2-DelM /OSC2-Main;
-#X obj 258 684 osc-receive 1, f 44;
-#X obj 553 717 osc-receive 2, f 44;
-#X obj 748 265 osc-send 1;
-#X obj 825 265 osc-send 2;
+/OSC2-DelM /OSC2-Main /OSC3-Vol /OSC3-Note /OSC3-NotOf /OSC3-FFreq
+/OSC3-FRes /OSC3-FReM /OSC3-Volm /OSC3-Del /OSC3-DelM /OSC3-Main /OSC4-Vol
+/OSC4-Note /OSC4-NotOf /OSC4-FFreq /OSC4-FRes /OSC4-FReM /OSC4-Volm
+/OSC4-Del /OSC4-DelM /OSC4-Main, f 134;
+#X obj 1114 713 osc-receive 4, f 44;
+#X obj 749 291 osc-send 4;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 2 0 3 0;
-#X connect 3 0 24 0;
+#X connect 3 0 30 0;
 #X connect 7 0 8 0;
 #X connect 8 0 23 0;
 #X connect 9 0 10 0;
@@ -2055,30 +2062,50 @@ fx and more tweakable though.;
 #X connect 20 0 13 0;
 #X connect 21 0 22 0;
 #X connect 22 0 14 0;
-#X connect 24 0 4 0;
-#X connect 24 1 5 0;
-#X connect 24 2 6 0;
-#X connect 24 3 15 0;
-#X connect 24 4 17 0;
-#X connect 24 5 19 0;
-#X connect 24 6 21 0;
-#X connect 24 7 25 0;
-#X connect 24 8 25 1;
-#X connect 24 9 25 2;
-#X connect 24 10 25 3;
-#X connect 24 11 25 4;
-#X connect 24 12 25 5;
-#X connect 24 13 25 6;
-#X connect 24 14 25 7;
-#X connect 24 15 25 8;
-#X connect 24 16 25 9;
-#X connect 24 17 26 0;
-#X connect 24 18 26 1;
-#X connect 24 19 26 2;
-#X connect 24 20 26 3;
-#X connect 24 21 26 4;
-#X connect 24 22 26 5;
-#X connect 24 23 26 6;
-#X connect 24 24 26 7;
-#X connect 24 25 26 8;
-#X connect 24 26 26 9;
+#X connect 30 0 4 0;
+#X connect 30 1 5 0;
+#X connect 30 2 6 0;
+#X connect 30 3 15 0;
+#X connect 30 4 17 0;
+#X connect 30 5 19 0;
+#X connect 30 6 21 0;
+#X connect 30 7 24 0;
+#X connect 30 8 24 1;
+#X connect 30 9 24 2;
+#X connect 30 10 24 3;
+#X connect 30 11 24 4;
+#X connect 30 12 24 5;
+#X connect 30 13 24 6;
+#X connect 30 14 24 7;
+#X connect 30 15 24 8;
+#X connect 30 16 24 9;
+#X connect 30 17 25 0;
+#X connect 30 18 25 1;
+#X connect 30 19 25 2;
+#X connect 30 20 25 3;
+#X connect 30 21 25 4;
+#X connect 30 22 25 5;
+#X connect 30 23 25 6;
+#X connect 30 24 25 7;
+#X connect 30 25 25 8;
+#X connect 30 26 25 9;
+#X connect 30 27 28 0;
+#X connect 30 28 28 1;
+#X connect 30 29 28 2;
+#X connect 30 30 28 3;
+#X connect 30 31 28 4;
+#X connect 30 32 28 5;
+#X connect 30 33 28 6;
+#X connect 30 34 28 7;
+#X connect 30 35 28 8;
+#X connect 30 36 28 9;
+#X connect 30 37 31 0;
+#X connect 30 38 31 1;
+#X connect 30 39 31 2;
+#X connect 30 40 31 3;
+#X connect 30 41 31 4;
+#X connect 30 42 31 5;
+#X connect 30 43 31 6;
+#X connect 30 44 31 7;
+#X connect 30 45 31 8;
+#X connect 30 46 31 9;
